@@ -8,6 +8,6 @@ module.exports = (env) => {
       filename: '[name].[contenthash].js',
       clean: true
     },
-    mode: env.mode ?? 'development',
+    mode: env.mode ?? 'development ',
   }
 } 
