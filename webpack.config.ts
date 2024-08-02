@@ -13,7 +13,7 @@ type EnvVariables = {
 export default (env: EnvVariables): webpack.Configuration => {
   const isDev = env.mode === 'development'
   return {
-    entry: path.resolve(__dirname, 'src', 'index.ts'),
+    entry: path.resolve(__dirname, 'src', 'app', 'index.tsx'),
     output: {
       path: path.resolve(__dirname, 'build'),
       filename: '[name].[contenthash].js',
