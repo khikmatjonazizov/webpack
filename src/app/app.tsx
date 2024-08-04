@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './style/global.scss'
+import './style/global.scss';
 
 export const App = () => {
   const [state, setState] = useState(0);
@@ -7,7 +7,7 @@ export const App = () => {
   return (
     <div className="app">
       <h1>Hello world {state}</h1>
-      <button onClick={inc}>Click</button>
+      <button className="button" onClick={inc}>Click</button>
     </div>
   )
 }
