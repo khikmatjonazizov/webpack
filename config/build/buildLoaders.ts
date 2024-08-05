@@ -35,9 +35,16 @@ export const buildLoaders = ({ mode }: BuildOptions): Configuration['module']['r
   }
 
   const tsLoader: RuleSetRule = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
     exclude: /node_modules/,
+    test: /\.tsx?$/,
+    use: [
+      {
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: isDev,
+        }
+      }
+    ]
   };
 
   return [assetLoader, svgRLoader, scssLoader, tsLoader];

@@ -8,9 +8,13 @@ import './model';
 
 appStarted()
 
+const todo = (msg: string) => {
+  console.log(msg)
+}
 export const App = () => {
   const [state, setState] = useState(0);
   const inc = () => setState(prev => prev + 1);
+  todo('1')
   return (
     <RouterProvider router={router}>
       {__MODE__}
