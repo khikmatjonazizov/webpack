@@ -1,4 +1,3 @@
-import { StrictMode, useState } from "react";
 import './style/global.scss';
 import { Link, RouterProvider } from 'atomic-router-react';
 import { router, routes } from "@/shared/config/routing";
@@ -8,13 +7,7 @@ import './model';
 
 appStarted();
 
-const todo = (msg: string) => {
-  console.log(msg);
-}
 export const App = () => {
-  const [state, setState] = useState(0);
-  const inc = () => setState(prev => prev + 1);
-  todo('1')
   return (
     <RouterProvider router={router}>
       {__MODE__}

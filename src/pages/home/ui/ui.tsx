@@ -1,15 +1,16 @@
-import React from "react";
-import png from '@/shared/assets/img/Carma_Logo_Orange.png';
-import jpeg from '@/shared/assets/img/Carma_Logo_Orange.jpeg';
-import Svg from '@/shared/assets/icons/Carma_Logo_Orange.svg';
+import React, { useState } from "react";
 
 export const HomePageComponent: React.FC = () => {
+  const [count, setCount] = useState(0);
+
+  const inc = () => {
+    setCount(prev => prev + 1);
+    throw new Error()
+  }
   return (
     <div>
       <h1>Home</h1>
-      <img src={png} />
-      <img src={jpeg} />
-      <Svg width={30} height={30} />
+      <button onClick={inc}>{count}</button>
     </div>
   )
 }
