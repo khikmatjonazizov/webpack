@@ -9,7 +9,7 @@ import './model';
 appStarted()
 
 const todo = (msg: string) => {
-  console.log(msg)
+  console.log(msg);
 }
 export const App = () => {
   const [state, setState] = useState(0);
