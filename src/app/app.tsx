@@ -6,7 +6,7 @@ import { appStarted } from "@/shared/config/system";
 import { Routing } from "@/pages/routing";
 import './model';
 
-appStarted()
+appStarted();
 
 const todo = (msg: string) => {
   console.log(msg);
