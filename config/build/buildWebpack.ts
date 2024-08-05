@@ -16,7 +16,7 @@ export const buildWebpack = (options: BuildOptions): Configuration => {
       filename: '[name].[contenthash].js',
       clean: true
     },
-    mode: mode ?? 'development',
+    mode,
     plugins: buildPlugins(options),
     module: {
       rules: buildLoaders(options),

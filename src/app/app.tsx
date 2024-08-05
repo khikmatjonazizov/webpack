@@ -13,6 +13,7 @@ export const App = () => {
   const inc = () => setState(prev => prev + 1);
   return (
     <RouterProvider router={router}>
+      {__MODE__}
       <Link to={routes.home}>Home</Link>
       <Link to={routes.about}>About</Link>
       <Link to={routes.shop}>Shop</Link>
