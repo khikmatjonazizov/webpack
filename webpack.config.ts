@@ -6,6 +6,7 @@ import path from 'path';
 type EnvVariables = {
   mode: BuildMode;
   port: number;
+  analyzer?: boolean;
 }
 
 export default (env: EnvVariables): Configuration => {
@@ -19,6 +20,7 @@ export default (env: EnvVariables): Configuration => {
     port: env.port ?? 1313,
     mode: env.mode ?? 'development',
     paths,
+    analyzer: env.analyzer,
   });
 
   return config;
