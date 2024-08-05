@@ -5,7 +5,24 @@ import { BuildOptions } from "./types";
 export const buildLoaders = ({ mode }: BuildOptions): Configuration['module']['rules'] => {
   const isDev = mode === 'development';
 
-  const scssLoader = {
+  const assetLoader: RuleSetRule = {
+    test: /\.(png|jpg|jpeg|gif)$/i,
+    type: 'asset/resource'
+  }
+
+  const svgRLoader: RuleSetRule = {
+    test: /\.svg$/i,
+    use: [
+      {
+        loader: '@svgr/webpack',
+        options: {
+          icon: true
+        }
+      }
+    ]
+  }
+
+  const scssLoader: RuleSetRule = {
     test: /\.s[ac]ss$/i,
     use: [
         // Creates `style` nodes from JS strings
@@ -23,5 +40,5 @@ export const buildLoaders = ({ mode }: BuildOptions): Configuration['module']['r
     exclude: /node_modules/,
   };
 
-  return [scssLoader, tsLoader];
+  return [assetLoader, svgRLoader, scssLoader, tsLoader];
 };
