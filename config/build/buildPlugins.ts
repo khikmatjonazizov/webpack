@@ -39,7 +39,7 @@ export const buildPlugins = (options: BuildOptions): Configuration['plugins'] =>
   plugins.push(
     new CopyWebpackPlugin({
       patterns: [
-        { from: path.resolve(paths.public, 'locales'), to: paths.output }
+        { from: path.resolve(paths.public, 'locales'), to: path.resolve(paths.output, 'locales') }
       ]
     })
   )
