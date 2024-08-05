@@ -1,6 +1,7 @@
 import { createRouteView } from "atomic-router-react";
-import { routes } from "../../../shared/config/routing";
-import { createLazyPage } from "../../../shared/lib/lazy-page";
+import { routes } from "@/shared/config/routing";
+import { createLazyPage } from "@/shared/lib/lazy-page";
+import { withSuspense } from "@/shared/ui/with-suspense";
 
 const load = () => import('./ui')
 
@@ -10,6 +11,6 @@ const Page = createLazyPage({
 })
 
 export const AboutPage = createRouteView({
-  view: Page,
+  view: withSuspense(Page),
   route: routes.about,
 })
